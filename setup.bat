@@ -1,5 +1,5 @@
 @echo off
-
+echo Setting up the project...
 python -m venv .venv
 echo .venv created
 
