@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ faculty.name }} - Faculty - Solpara High School (H.S){% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="faculty-profile-card">
+                <div class="faculty-image-wrapper">
+                    {% if faculty.image %}
+                    <img src="{{ faculty.image.url }}" class="faculty-profile-image" alt="{{ faculty.name }}">
+                    {% else %}
+                    <img src="{% static 'images/default-profile.jpg' %}" class="faculty-profile-image" alt="{{ faculty.name }}">
+                    {% endif %}
+                </div>
+                <div class="faculty-contact-info">
+                    <div class="social-links">
+                        {% if faculty.email %}
+                        <a href="mailto:{{ faculty.email }}" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        {% endif %}
+                        {% if faculty.phone %}
+                        <a href="tel:{{ faculty.phone }}" class="social-link" title="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        {% endif %}
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-8">
+            <div class="faculty-detail-content">
+                <h1 class="faculty-name display-4 mb-2">{{ faculty.name }}</h1>
+                <p class="faculty-designation text-primary mb-3">{{ faculty.designation }}</p>
+                
+                <div class="info-card mb-4">
+                    <h3 class="card-title">
+                        <i class="fas fa-user-graduate text-primary me-2"></i>
+                        Academic Information
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Department:</strong> {{ faculty.department }}</p>
+                            <p><strong>Qualification:</strong> {{ faculty.qualification }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Experience:</strong> {{ faculty.experience }} years</p>
+                            <p><strong>Specialization:</strong> {{ faculty.specialization }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% if faculty.description %}
+                <div class="info-card mb-4">
+                    <h3 class="card-title">
+                        <i class="fas fa-book-reader text-primary me-2"></i>
+                        About
+                    </h3>
+                    <p class="mb-0">{{ faculty.description }}</p>
+                </div>
+                {% endif %}
+
+                {% if faculty.achievements %}
+                <div class="info-card mb-4">
+                    <h3 class="card-title">
+                        <i class="fas fa-trophy text-primary me-2"></i>
+                        Achievements
+                    </h3>
+                    <p class="mb-0">{{ faculty.achievements }}</p>
+                </div>
+                {% endif %}
+
+                <div class="mt-4">
+                    <a href="{% url 'school_app:faculty_list' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Faculty
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

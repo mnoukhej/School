@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Submit Inquiry - Solpara High School{% endblock %}
+
+{% block content %}
+<section class="inquiry-section">
+    <div class="container">
+        <h2>Submit an Inquiry</h2>
+        <div class="inquiry-form">
+            <form method="post">
+                {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {{ form.as_p }}
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

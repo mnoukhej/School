@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Solpara High School - Home{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Welcome to Solpara High School</h1>
+        <p>Providing Quality Education Since 2005</p>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-school stat-icon"></i>
+                <h3 class="stat-title">Class V-XII</h3>
+                <p class="stat-subtitle">Education Levels</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-language stat-icon"></i>
+                <h3 class="stat-title">2 Mediums</h3>
+                <p class="stat-subtitle">Bengali & Urdu</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-graduation-cap stat-icon"></i>
+                <h3 class="stat-title">Arts Stream</h3>
+                <p class="stat-subtitle">Higher Secondary</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="academics-section">
+    <div class="container">
+        <h2 class="section-title">Academic Programs</h2>
+        <div class="programs-grid">
+            <div class="program-card">
+                <i class="fas fa-book program-icon"></i>
+                <h3 class="program-title">Secondary Education</h3>
+                <p class="program-subtitle">Class V to X</p>
+                <ul class="program-features">
+                    <li>Bengali Medium Section</li>
+                    <li>Urdu Medium Section</li>
+                    <li>Expert Faculty</li>
+                    <li>Regular Assessments</li>
+                </ul>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-university program-icon"></i>
+                <h3 class="program-title">Higher Secondary</h3>
+                <p class="program-subtitle">Class XI & XII (Arts)</p>
+                <ul class="program-features">
+                    <li>Humanities Subjects</li>
+                    <li>Social Sciences</li>
+                    <li>Literature Studies</li>
+                    <li>Career Guidance</li>
+                </ul>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-language program-icon"></i>
+                <h3 class="program-title">Language Excellence</h3>
+                <p class="program-subtitle">Dual Medium Instruction</p>
+                <ul class="program-features">
+                    <li>Bengali Literature</li>
+                    <li>Urdu Literature</li>
+                    <li>Language Labs</li>
+                    <li>Cultural Activities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="subjects-section">
+    <div class="container">
+        <h2 class="section-title">Arts Stream Subjects</h2>
+        <div class="subjects-grid">
+            <div class="subject-card">
+                <i class="fas fa-history subject-icon"></i>
+                <h3 class="subject-title">History</h3>
+                <p class="subject-description">World & Regional History</p>
+            </div>
+            <div class="subject-card">
+                <i class="fas fa-landmark subject-icon"></i>
+                <h3 class="subject-title">Political Science</h3>
+                <p class="subject-description">Government & Politics</p>
+            </div>
+            <div class="subject-card">
+                <i class="fas fa-users subject-icon"></i>
+                <h3 class="subject-title">Sociology</h3>
+                <p class="subject-description">Society & Culture</p>
+            </div>
+            <div class="subject-card">
+                <i class="fas fa-book-reader subject-icon"></i>
+                <h3 class="subject-title">Literature</h3>
+                <p class="subject-description">Bengali & Urdu</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>School Address</h3>
+                <p><i class="fas fa-map-marker-alt"></i> P.O. - Solpara, P.S. - Goalpokhar<br>
+                   Dist. Uttar Dinajpur, West Bengal - 733210</p>
+            </div>
+            <div class="inquiry-form">
+                <h3>Submit an Inquiry</h3>
+                <form method="post" action="{% url 'school_app:submit_inquiry' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Faculty - Solpara High School (H.S){% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="section-header text-center mb-5">
+        <h2 class="display-4 fw-bold text-primary mb-3">Our Faculty</h2>
+        <p class="lead text-muted">Meet our dedicated team of educators shaping the future</p>
+        <div class="divider"></div>
+    </div>
+
+    <div class="row g-4">
+        {% for department, faculty_members in faculty_by_dept.items %}
+        {% for faculty in faculty_members %}
+        <div class="col-md-4">
+            <div class="faculty-card">
+                <div class="faculty-card-inner">
+                    <div class="faculty-image-wrapper">
+                        {% if faculty.photo %}
+                        <img src="{{ faculty.photo.url }}" class="faculty-image" alt="{{ faculty.name }}">
+                        {% else %}
+                        <img src="{% static 'images/default-profile.jpg' %}" class="faculty-image" alt="{{ faculty.name }}">
+                        {% endif %}
+                        <div class="faculty-overlay">
+                            <a href="{% url 'school_app:faculty_detail' faculty.slug %}" class="btn btn-light">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">{{ faculty.name }}</h3>
+                        <p class="faculty-designation">{{ faculty.designation }}</p>
+                        <p class="faculty-department">{{ department }}</p>
+                        <div class="faculty-social">
+                            {% if faculty.email %}
+                            <a href="mailto:{{ faculty.email }}" class="social-link"><i class="fas fa-envelope"></i></a>
+                            {% endif %}
+                            {% if faculty.phone %}
+                            <a href="tel:{{ faculty.phone }}" class="social-link"><i class="fas fa-phone"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% if not faculty_by_dept %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle me-2"></i>No faculty members found.
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

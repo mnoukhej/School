@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solpara High School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                       url('https://images.unsplash.com/photo-1571055582845-67e98663656f?q=80&w=1631&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Solpara High School</h1>
+                <p class="tagline">Bengali and Urdu Medium School (Est. 2005)</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#streams">Streams</a></li>
+                <li><a href="#admission">Admission</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Solpara High School</h1>
+            <p>Excellence in Bengali & Urdu Education Since 2005</p>
+            <div class="hero-address">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>P.O. - Solpara, P.S. - Goalpokhar<br>Dist. Uttar Dinajpur, West Bengal - 733210</span>
+            </div>
+            <a href="#contact" class="cta-button">Enroll Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop" alt="Traditional School Building" class="main-image">
+                <div class="image-caption">Solpara High School Campus</div>
+            </div>
+            <div class="about-text">
+                <p>Solpara High School, established in 2005, is a prestigious Bengali and Urdu medium institution located in Solpara, Goalpokhar. We provide quality education from Class V to XII, with a special focus on Arts stream in higher secondary. Our dual-medium approach ensures students excel in both Bengali and Urdu languages while receiving comprehensive education.</p>
+                <div class="school-details">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>P.O. - Solpara, P.S. - Goalpokhar<br>Dist. Uttar Dinajpur, West Bengal - 733210</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-language"></i>
+                        <span>Bengali & Urdu Medium</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact: School Office</span>
+                    </div>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-school"></i>
+                    <h3>Class V-XII</h3>
+                    <p>Education Levels</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-language"></i>
+                    <h3>2 Mediums</h3>
+                    <p>Bengali & Urdu</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Arts Stream</h3>
+                    <p>Higher Secondary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="academics" class="academics">
+        <h2>Academic Programs</h2>
+        <div class="programs">
+            <div class="program-card">
+                <i class="fas fa-book-reader"></i>
+                <h3>Secondary Education</h3>
+                <p>Class V to X</p>
+                <ul class="program-features">
+                    <li>Bengali Medium Section</li>
+                    <li>Urdu Medium Section</li>
+                    <li>Expert Faculty</li>
+                    <li>Regular Assessments</li>
+                </ul>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-university"></i>
+                <h3>Higher Secondary</h3>
+                <p>Class XI & XII (Arts)</p>
+                <ul class="program-features">
+                    <li>Humanities Subjects</li>
+                    <li>Social Sciences</li>
+                    <li>Literature Studies</li>
+                    <li>Career Guidance</li>
+                </ul>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-language"></i>
+                <h3>Language Excellence</h3>
+                <p>Dual Medium Instruction</p>
+                <ul class="program-features">
+                    <li>Bengali Literature</li>
+                    <li>Urdu Literature</li>
+                    <li>Language Labs</li>
+                    <li>Cultural Activities</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="streams" class="streams">
+        <h2>Arts Stream Subjects</h2>
+        <div class="streams-grid">
+            <div class="subject-card">
+                <i class="fas fa-history"></i>
+                <h3>History</h3>
+                <p>World & Regional History</p>
+            </div>
+            <div class="subject-card">
+                <i class="fas fa-landmark"></i>
+                <h3>Political Science</h3>
+                <p>Government & Politics</p>
+            </div>
+            <div class="subject-card">
+                <i class="fas fa-users"></i>
+                <h3>Sociology</h3>
+                <p>Society & Culture</p>
+            </div>
+            <div class="subject-card">
+                <i class="fas fa-book"></i>
+                <h3>Literature</h3>
+                <p>Bengali & Urdu</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="admission" class="admission">
+        <h2>Admission Information</h2>
+        <div class="admission-content">
+            <div class="admission-card">
+                <h3>Entry Requirements</h3>
+                <ul>
+                    <li>Open for Class V to XI admissions</li>
+                    <li>Previous academic records</li>
+                    <li>Entrance assessment</li>
+                    <li>Parent interview</li>
+                </ul>
+            </div>
+            <div class="admission-card">
+                <h3>Required Documents</h3>
+                <ul>
+                    <li>Previous school certificates</li>
+                    <li>Transfer certificate</li>
+                    <li>Birth certificate</li>
+                    <li>Passport size photographs</li>
+                </ul>
+            </div>
+            <div class="admission-card">
+                <h3>Medium Selection</h3>
+                <ul>
+                    <li>Choice of Bengali medium</li>
+                    <li>Choice of Urdu medium</li>
+                    <li>Language proficiency test</li>
+                    <li>Parent consultation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>P.O. - Solpara, P.S. - Goalpokhar<br>
+                       Dist. Uttar Dinajpur, West Bengal - 733210</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-language"></i>
+                    <p>Bengali & Urdu Medium Institution</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>School Office</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Contact School Office for Inquiries</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <h3>Inquiry Form</h3>
+                <div class="form-group">
+                    <label for="student-name">Student's Name</label>
+                    <input type="text" id="student-name" placeholder="Enter student's name" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian's Name</label>
+                    <input type="text" id="parent-name" placeholder="Enter parent/guardian's name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <input type="tel" id="phone" placeholder="Enter contact number" required>
+                </div>
+                <div class="form-group">
+                    <label for="class-admission">Admission for Class</label>
+                    <select id="class-admission" required>
+                        <option value="">Select Class</option>
+                        <option value="5">Class V</option>
+                        <option value="6">Class VI</option>
+                        <option value="7">Class VII</option>
+                        <option value="8">Class VIII</option>
+                        <option value="9">Class IX</option>
+                        <option value="10">Class X</option>
+                        <option value="11">Class XI (Arts)</option>
+                        <option value="12">Class XII (Arts)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="medium">Preferred Medium</label>
+                    <select id="medium" required>
+                        <option value="">Select Medium</option>
+                        <option value="bengali">Bengali Medium</option>
+                        <option value="urdu">Urdu Medium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Message</label>
+                    <textarea id="message" placeholder="Any specific queries or information"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                    <li><a href="#streams">Streams</a></li>
+                    <li><a href="#admission">Admission</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>School Address</h3>
+                <p>P.O. - Solpara, P.S. - Goalpokhar<br>
+                   Dist. Uttar Dinajpur, West Bengal - 733210</p>
+            </div>
+            <div class="footer-section">
+                <h3>Medium of Instruction</h3>
+                <ul>
+                    <li>Bengali Medium</li>
+                    <li>Urdu Medium</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Solpara High School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

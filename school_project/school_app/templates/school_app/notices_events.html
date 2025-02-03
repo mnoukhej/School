@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Notices & Events - Solpara High School (H.S){% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="section-header text-center mb-5">
+        <h2 class="display-4 fw-bold text-primary mb-3">Notices & Events</h2>
+        <p class="lead text-muted">Stay updated with our latest announcements and upcoming events</p>
+        <div class="divider"></div>
+    </div>
+
+    <div class="row">
+        <!-- Notices Section -->
+        <div class="col-lg-6 mb-4">
+            <div class="card notice-card h-100">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0"><i class="fas fa-bullhorn me-2"></i>Latest Notices</h3>
+                </div>
+                <div class="card-body">
+                    {% if notices %}
+                        {% for notice in notices %}
+                        <div class="notice-item">
+                            <div class="notice-date">{{ notice.date_posted|date:"d M Y" }}</div>
+                            <h4 class="notice-title">{{ notice.title }}</h4>
+                            <p class="notice-content">{{ notice.content }}</p>
+                            {% if notice.attachment %}
+                            <a href="{{ notice.attachment.url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                                <i class="fas fa-download me-1"></i>Download
+                            </a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted text-center my-4">No notices available at the moment.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Section -->
+        <div class="col-lg-6 mb-4">
+            <div class="card event-card h-100">
+                <div class="card-header bg-secondary text-white">
+                    <h3 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Upcoming Events</h3>
+                </div>
+                <div class="card-body">
+                    {% if events %}
+                        {% for event in events %}
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">{{ event.event_date|date:"d" }}</span>
+                                <span class="month">{{ event.event_date|date:"M" }}</span>
+                            </div>
+                            <div class="event-details">
+                                <h4 class="event-title">{{ event.title }}</h4>
+                                <p class="event-time"><i class="far fa-clock me-1"></i>{{ event.event_time }}</p>
+                                <p class="event-venue"><i class="fas fa-map-marker-alt me-1"></i>{{ event.venue }}</p>
+                                <p class="event-description">{{ event.description }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted text-center my-4">No upcoming events at the moment.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

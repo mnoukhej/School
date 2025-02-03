@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Streams - Solpara High School{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Academic Streams</h1>
+        <p>Choose your path to success</p>
+    </div>
+</section>
+
+<section class="streams-section">
+    <div class="container">
+        <div class="row">
+            {% for stream in streams %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="stream-card">
+                    {% if stream.image %}
+                    <div class="stream-image">
+                        <img src="{{ stream.image.url }}" alt="{{ stream.name }}" class="img-fluid">
+                    </div>
+                    {% endif %}
+                    <div class="stream-content">
+                        <h3>{{ stream.name }}</h3>
+                        <p>{{ stream.description|truncatewords:30 }}</p>
+                        <div class="subjects">
+                            <h4>Key Subjects:</h4>
+                            <ul>
+                                {% for subject in stream.subjects.split|slice:":5" %}
+                                <li><i class="fas fa-book"></i> {{ subject|title }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <a href="{% url 'school_app:stream_detail' stream.name %}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

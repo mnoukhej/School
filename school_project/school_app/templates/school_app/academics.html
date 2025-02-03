@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Academics - Solpara High School{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Academics</h1>
+        <p>Excellence in Education</p>
+    </div>
+</section>
+
+<section class="academics-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="academic-content">
+                    <h2>Our Academic Programs</h2>
+                    <p>At Solpara High School, we offer comprehensive education in both Bengali and Urdu medium, focusing on holistic development of students through various academic and co-curricular activities.</p>
+                    
+                    <div class="academic-features mt-4">
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Comprehensive curriculum aligned with state board</li>
+                            <li><i class="fas fa-check-circle"></i> Experienced faculty members</li>
+                            <li><i class="fas fa-check-circle"></i> Regular assessments and feedback</li>
+                            <li><i class="fas fa-check-circle"></i> Special attention to weak students</li>
+                            <li><i class="fas fa-check-circle"></i> Modern teaching methodologies</li>
+                        </ul>
+                    </div>
+
+                    <div class="streams-section mt-5">
+                        <h3>Available Streams</h3>
+                        <div class="row">
+                            {% for stream in streams %}
+                            <div class="col-md-6 mb-4">
+                                <div class="stream-card">
+                                    {% if stream.image %}
+                                    <img src="{{ stream.image.url }}" alt="{{ stream.name }}" class="stream-image">
+                                    {% endif %}
+                                    <div class="stream-info">
+                                        <h4>{{ stream.name }}</h4>
+                                        <p>{{ stream.description|truncatewords:30 }}</p>
+                                        <a href="{% url 'school_app:stream_detail' stream.name %}" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="info-card">
+                        <h3>Medium of Instruction</h3>
+                        <ul>
+                            <li>Bengali Medium</li>
+                            <li>Urdu Medium</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Class Timings</h3>
+                        <ul>
+                            <li>Morning Shift: 7:00 AM - 12:00 PM</li>
+                            <li>Day Shift: 12:30 PM - 5:30 PM</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="{% url 'school_app:admission' %}">Admission Process</a></li>
+                            <li><a href="{% url 'school_app:faculty_list' %}">Our Faculty</a></li>
+                            <li><a href="{% url 'school_app:notices' %}">Latest Notices</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

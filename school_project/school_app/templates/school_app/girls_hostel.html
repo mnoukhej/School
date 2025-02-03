@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Girls Hostel - Solpara High School (H.S){% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="section-header text-center mb-5">
+        <h2 class="display-4 fw-bold text-primary mb-3">Girls Hostel</h2>
+        <p class="lead text-muted">A safe and nurturing environment for our female students</p>
+        <div class="divider"></div>
+    </div>
+
+    <!-- Hostel Overview -->
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <div class="hostel-image-wrapper">
+                <img src="{% static 'images/girls-hostel.jpg' %}" alt="Girls Hostel" class="img-fluid rounded shadow">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="hostel-info">
+                <h3 class="mb-4">Welcome to Our Girls Hostel</h3>
+                <p>Our girls' hostel provides a comfortable and secure living environment for students. With modern amenities and strict security measures, we ensure that our students feel at home while focusing on their studies.</p>
+                
+                <div class="features-list mt-4">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt text-primary"></i>
+                        <span>24/7 Security</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-wifi text-primary"></i>
+                        <span>Wi-Fi Facility</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-utensils text-primary"></i>
+                        <span>Nutritious Meals</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-first-aid text-primary"></i>
+                        <span>Medical Facility</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Facilities -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card facilities-card">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">Hostel Facilities</h3>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="facility-item">
+                                <i class="fas fa-bed"></i>
+                                <h4>Accommodation</h4>
+                                <ul>
+                                    <li>Well-furnished rooms</li>
+                                    <li>Comfortable beds</li>
+                                    <li>Study tables</li>
+                                    <li>Adequate storage</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="facility-item">
+                                <i class="fas fa-book-reader"></i>
+                                <h4>Study Environment</h4>
+                                <ul>
+                                    <li>Study hall</li>
+                                    <li>Library access</li>
+                                    <li>Reading room</li>
+                                    <li>Wi-Fi connectivity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="facility-item">
+                                <i class="fas fa-basketball-ball"></i>
+                                <h4>Recreation</h4>
+                                <ul>
+                                    <li>Common room</li>
+                                    <li>TV room</li>
+                                    <li>Indoor games</li>
+                                    <li>Sports facilities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rules and Regulations -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card rules-card">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">Rules & Regulations</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="rules-list">
+                                <li>Students must follow the hostel timing strictly</li>
+                                <li>Visitors are allowed only in the designated area</li>
+                                <li>Maintain cleanliness in rooms and common areas</li>
+                                <li>Follow the mess timing and rules</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="rules-list">
+                                <li>No electrical appliances allowed in rooms</li>
+                                <li>Inform warden before leaving the hostel</li>
+                                <li>Maintain discipline and decorum</li>
+                                <li>Follow the study hours schedule</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card contact-card">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">Contact Information</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Warden:</strong> Mrs. Sarah Johnson</p>
+                            <p><strong>Phone:</strong> +91 9876543210</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Email:</strong> girlshostel@solparahighschool.com</p>
+                            <p><strong>Emergency Contact:</strong> +91 9876543211</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

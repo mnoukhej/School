@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About - Solpara High School{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Learn about our history, mission, and values</p>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        {% if about %}
+        <div class="about-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>{{ about.title }}</h2>
+                    <div class="about-text">
+                        {{ about.content|linebreaks }}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    {% if about.image %}
+                    <div class="about-image">
+                        <img src="{{ about.image.url }}" alt="About Solpara High School" class="img-fluid rounded">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="school-stats mt-5">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <i class="fas fa-user-graduate fa-3x"></i>
+                        <h3>500+</h3>
+                        <p>Students</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                        <h3>{{ faculty_count }}+</h3>
+                        <p>Faculty Members</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <i class="fas fa-book-reader fa-3x"></i>
+                        <h3>2</h3>
+                        <p>Medium of Instructions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="school-features mt-5">
+            <h2 class="text-center mb-4">Why Choose Us?</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-language"></i>
+                        <h3>Dual Medium</h3>
+                        <p>Choose between Bengali and Urdu medium of instruction</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-microscope"></i>
+                        <h3>Modern Labs</h3>
+                        <p>Well-equipped science and computer laboratories</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Expert Faculty</h3>
+                        <p>Experienced and dedicated teaching staff</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

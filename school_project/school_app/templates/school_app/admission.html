@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Admission - Solpara High School (H.S){% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Admission</h1>
+        <p>Join our educational journey</p>
+    </div>
+</section>
+
+<section class="admission-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="admission-content">
+                    <h2>Admission Process</h2>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Fill Inquiry Form</h3>
+                            <p>Complete the inquiry form with all required details about the student and parent/guardian.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Document Verification</h3>
+                            <p>Submit necessary documents for verification (birth certificate, previous school records, etc.).</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Entrance Test</h3>
+                            <p>Student may need to appear for an entrance test based on the applying class.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3>Final Admission</h3>
+                            <p>Upon successful verification and test results, complete the admission process.</p>
+                        </div>
+                    </div>
+
+                    <div class="admission-form mt-5">
+                        <h3>Inquiry Form</h3>
+                        <form method="post" action="{% url 'school_app:submit_inquiry' %}">
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <div class="mb-3">
+                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.help_text %}
+                                <div class="form-text">{{ field.help_text }}</div>
+                                {% endif %}
+                                {% if field.errors %}
+                                <div class="alert alert-danger">
+                                    {{ field.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="admission-sidebar">
+                    <div class="info-card">
+                        <h3>Required Documents</h3>
+                        <ul>
+                            <li><i class="fas fa-file-alt"></i> Birth Certificate</li>
+                            <li><i class="fas fa-file-alt"></i> Previous School Records</li>
+                            <li><i class="fas fa-file-alt"></i> Transfer Certificate (if applicable)</li>
+                            <li><i class="fas fa-file-alt"></i> Passport Size Photographs</li>
+                            <li><i class="fas fa-file-alt"></i> Address Proof</li>
+                            <li><i class="fas fa-file-alt"></i> Aadhar Card</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Solpara High School (H.S)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;X36R+R63 Sholpara, Birbari<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;West Bengal 733201
+                                <a href="https://www.google.com/maps/dir//Solpara+High+School+X36R%2BR63+Sholpara,+Birbari,+West+Bengal+733201/@25.9620281,88.0905492,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x39e5217dbdc28585:0xa1c6bc211a3fb07c" target="_blank" class="text-primary">
+                                    <i class="fas fa-directions"></i> Get Directions
+                                </a>
+                            </li>
+                            <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                            <li><i class="fas fa-envelope"></i> admissions@solparahighschool.com</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 3:00 PM</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Important Dates</h3>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt"></i> Form Submission: Jan-Mar</li>
+                            <li><i class="fas fa-calendar-alt"></i> Entrance Test: April</li>
+                            <li><i class="fas fa-calendar-alt"></i> Results: May</li>
+                            <li><i class="fas fa-calendar-alt"></i> Final Admission: June</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

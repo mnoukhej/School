@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ stream.name }} - Solpara High School{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>{{ stream.name }}</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'school_app:home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'school_app:streams' %}">Streams</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ stream.name }}</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<section class="stream-detail-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="stream-content">
+                    {% if stream.image %}
+                    <div class="stream-image mb-4">
+                        <img src="{{ stream.image.url }}" alt="{{ stream.name }}" class="img-fluid rounded">
+                    </div>
+                    {% endif %}
+                    
+                    <div class="stream-description">
+                        <h2>About {{ stream.name }}</h2>
+                        {{ stream.description|linebreaks }}
+                    </div>
+
+                    <div class="subjects-section mt-4">
+                        <h3>Subjects Offered</h3>
+                        <div class="subjects-grid">
+                            {% for subject in stream.subjects.split %}
+                            <div class="subject-item">
+                                <i class="fas fa-book"></i>
+                                <span>{{ subject|title }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="stream-sidebar">
+                    <div class="info-card">
+                        <h3>Quick Information</h3>
+                        <ul>
+                            <li><i class="fas fa-clock"></i> Duration: 2 Years</li>
+                            <li><i class="fas fa-users"></i> Class Size: 40 Students</li>
+                            <li><i class="fas fa-chalkboard-teacher"></i> Expert Faculty</li>
+                            <li><i class="fas fa-flask"></i> Well-equipped Labs</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Career Prospects</h3>
+                        <ul>
+                            <li><i class="fas fa-graduation-cap"></i> Higher Studies</li>
+                            <li><i class="fas fa-briefcase"></i> Job Opportunities</li>
+                            <li><i class="fas fa-chart-line"></i> Growth Potential</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-card">
+                        <h3>Interested in this Stream?</h3>
+                        <p>Apply now for admission or contact us for more information.</p>
+                        <a href="{% url 'school_app:admission' %}" class="btn btn-primary btn-block">Apply Now</a>
+                        <a href="{% url 'school_app:contact' %}" class="btn btn-outline-primary btn-block mt-2">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

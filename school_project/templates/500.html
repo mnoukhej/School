@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Server Error - Solpara High School{% endblock %}
+
+{% block content %}
+<section class="error-section">
+    <div class="container">
+        <div class="error-content">
+            <h1>500</h1>
+            <h2>Server Error</h2>
+            <p>We're experiencing some technical difficulties. Please try again later.</p>
+            <a href="{% url 'school_app:home' %}" class="btn">Return to Homepage</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
