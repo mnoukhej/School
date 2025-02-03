@@ -1,8 +1,17 @@
 @echo off
 python -m venv .venv
-call venv\Scripts\activate.bat
+echo .venv created
+
+call .venv\Scripts\activate.bat
+echo.venv activated.
+
 python.exe -m pip install --upgrade pip
+echo pip upgrade -- done
+
+echo Installing dependencies...
 pip install -r requirements.txt
+echo requirements installed
+
 cd school_project
 python manage.py makemigrations
 python manage.py migrate
